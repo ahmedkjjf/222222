@@ -1,26 +1,115 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>القرآن الكريم</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    // ... existing code ...
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Amiri', serif; }
-        body { background: #f5f7fa; min-height: 100vh; text-align: center; direction: rtl; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        header { padding: 20px; background: #1e4d3f; color: white; border-radius: 10px; margin-bottom: 20px; }
-        h1 { font-size: 2.5em; }
-        .controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        select, button { padding: 10px 15px; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; background: white; }
-        .quran-text { background: white; padding: 20px; border-radius: 10px; font-size: 1.3em; line-height: 2; text-align: justify; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .verse { margin-bottom: 15px; }
-        .verse-number { background: #1e4d3f; color: white; padding: 5px 10px; border-radius: 5px; margin-left: 10px; }
-        .audio-player { width: 100%; margin-top: 20px; }
-        .tafsir-box { background: #f8f9fa; padding: 15px; border-radius: 10px; margin-top: 15px; display: none; }
+        body { 
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            min-height: 100vh; 
+            text-align: center; 
+            direction: rtl; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        header { 
+            padding: 20px; 
+            background: linear-gradient(135deg, #1e4d3f 0%, #2c7259 100%);
+            color: white; 
+            border-radius: 15px; 
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        header:hover {
+            transform: translateY(-5px);
+        }
+        .controls { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            margin-bottom: 20px; 
+            flex-wrap: wrap; 
+        }
+        select, button { 
+            padding: 12px 20px; 
+            border: none; 
+            border-radius: 10px; 
+            font-size: 1.1em; 
+            cursor: pointer; 
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        select:hover, button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .quran-text { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            font-size: 1.3em; 
+            line-height: 2.2; 
+            text-align: justify; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .verse { 
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .verse:hover {
+            background-color: #f8f9fa;
+        }
+        .verse-number { 
+            background: #1e4d3f; 
+            color: white; 
+            padding: 5px 12px; 
+            border-radius: 8px; 
+            margin-left: 12px;
+            display: inline-block;
+        }
+        .audio-player { 
+            width: 100%; 
+            margin-top: 25px;
+            border-radius: 10px;
+            height: 40px;
+        }
+        .tafsir-box { 
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+            display: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
-<body>
+// ... existing code ...
 
     <div class="container">
         <header>
